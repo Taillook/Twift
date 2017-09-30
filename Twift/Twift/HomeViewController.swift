@@ -12,10 +12,14 @@ import ObjectMapper
 
 class HomeViewController: UITableViewController {
     var data: [Tweet] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateTweets()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        updateTweets()
     }
     
     override func didReceiveMemoryWarning() {

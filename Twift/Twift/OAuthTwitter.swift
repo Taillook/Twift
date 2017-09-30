@@ -21,8 +21,6 @@ class OAuthTwitter {
     let ud: UserDefaults = Common.shared.userDefaults
     
     init() {
-        //self.oauthswift.client.credential.oauthToken = "4915971073-INK5QZuYRfYXasxxqLr46m5V2lXqbOGquT7olwb"
-        //self.oauthswift.client.credential.oauthTokenSecret = "8AZfCBFMNumRm0PlDHJEZ3aUczD0JHVIpp1PfIx8ptD5p"
         self.oauthswift.client.credential.oauthToken = shared.currentUser["token"]!
         self.oauthswift.client.credential.oauthTokenSecret = shared.currentUser["tokenSecret"]!
     }

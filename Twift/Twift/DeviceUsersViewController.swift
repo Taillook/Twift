@@ -12,7 +12,8 @@ import ObjectMapper
 
 class DeviceUsersViewController: UITableViewController {
     let ud: UserDefaults = Common.shared.userDefaults
-    var users: [Any] = []
+    let shared = Common.shared
+    var users: [[String: String]] = []
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -22,7 +23,7 @@ class DeviceUsersViewController: UITableViewController {
         super.viewDidLoad()
         
         if ((self.ud.object(forKey: "users")) != nil) {
-            users = self.ud.object(forKey: "users") as! [Any]
+            users = self.ud.object(forKey: "users") as! [[String: String]]
         }else {
             self.ud.set(users, forKey: "users")
         }
@@ -41,7 +42,7 @@ class DeviceUsersViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "deviceUserCell", for: indexPath)
-        OAuthTwitter().showUser(name: ((users[indexPath.row] as? [String: String])?["name"]!)!) { jsonString in
+        OAuthTwitter().showUser(name: (users[indexPath.row]["name"]!)) { jsonString in
             let user: User = Mapper<User>().map(JSONString: jsonString)!
             (cell.viewWithTag(1) as! UILabel).text = user.name!
             (cell.viewWithTag(2) as! UILabel).text = "@" + user.screenName!
@@ -51,7 +52,8 @@ class DeviceUsersViewController: UITableViewController {
     }
     
     override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-        print("tapped")
+        self.shared.currentUser = ["token": users[indexPath.row]["token"]!, "tokenSecret": users[indexPath.row]["tokenSecret"]!]
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addNewAccount(_ sender: Any) {
