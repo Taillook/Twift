@@ -7,20 +7,22 @@
 //
 
 import Foundation
+import OAuthSwift
 
 class Common {
     let consumerData: [String: String] =
         ["consumerKey":"W2tOU5CYeOnACCEcYfZvv9jbq", "consumerSecret":"cMZOWZzuo0E1oHzYUjyofmmj1CVP6DKYkm0D9eBmzDOrQCeSpn"]
-    var currentOAuthData: [String: String] =
-        ["OAuthKey":"", "OAuthSecret":""]
     let userDefaults = UserDefaults.standard
+    var currentUser: [String: String] = ["token":"", "tokenSecret":""] {
+        didSet {
+            self.userDefaults.set(currentUser, forKey: "currentUser")
+            self.userDefaults.synchronize()
+        }
+    }
     static let shared = Common()
     private init() {
-        if ((self.userDefaults.object(forKey: "currentUser")) != nil) {
-            self.currentOAuthData = self.userDefaults.object(forKey: "currentUser") as! [String: String]
-        }else {
-            self.userDefaults.set(self.currentOAuthData, forKey: "currentUser")
-            self.userDefaults.synchronize()
+        if ((userDefaults.object(forKey: "currentUser")) != nil) {
+            self.currentUser = userDefaults.object(forKey: "currentUser") as! [String: String]
         }
     }
 }

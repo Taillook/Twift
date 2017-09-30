@@ -9,18 +9,14 @@
 /* Begin PBXBuildFile section */
 		7AF054CABE4D17B174EED36F /* Pods_Twift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B55015AB91906EC096A3BC /* Pods_Twift.framework */; };
 		C9030A281F794EBE0037694E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9030A271F794EBE0037694E /* AppDelegate.swift */; };
-		C9030A2A1F794EBE0037694E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9030A291F794EBE0037694E /* ViewController.swift */; };
+		C9030A2A1F794EBE0037694E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9030A291F794EBE0037694E /* HomeViewController.swift */; };
 		C9030A2D1F794EBE0037694E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9030A2B1F794EBE0037694E /* Main.storyboard */; };
 		C9030A2F1F794EBE0037694E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9030A2E1F794EBE0037694E /* Assets.xcassets */; };
 		C9030A321F794EBE0037694E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9030A301F794EBE0037694E /* LaunchScreen.storyboard */; };
 		C92176681F7A5E9F00897134 /* DeviceUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92176671F7A5E9F00897134 /* DeviceUsersViewController.swift */; };
-		C921766B1F7A694200897134 /* DeviceUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921766A1F7A694200897134 /* DeviceUserModel.swift */; };
+		C921766B1F7A694200897134 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921766A1F7A694200897134 /* User.swift */; };
 		C921766E1F7A72EC00897134 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921766D1F7A72EC00897134 /* Common.swift */; };
-		C92176731F7A7FAF00897134 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92176721F7A7FAF00897134 /* Requests.swift */; };
-		C92176751F7B3D9700897134 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92176741F7B3D9700897134 /* OAuth.swift */; };
-		C96B0D7F1F7BC2AB00CBF632 /* String+sha1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B0D7E1F7BC2AB00CBF632 /* String+sha1.swift */; };
-		C99D38451F7E9E030036DE68 /* Dictionary+union.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D38441F7E9E030036DE68 /* Dictionary+union.swift */; };
-		C99D38471F7F340A0036DE68 /* String+hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D38461F7F340A0036DE68 /* String+hmac.swift */; };
+		C92176751F7B3D9700897134 /* OAuthTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92176741F7B3D9700897134 /* OAuthTwitter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,20 +25,15 @@
 		B576E70D733BE792CEEE9D85 /* Pods-Twift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twift/Pods-Twift.release.xcconfig"; sourceTree = "<group>"; };
 		C9030A241F794EBE0037694E /* Twift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9030A271F794EBE0037694E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C9030A291F794EBE0037694E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9030A291F794EBE0037694E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C9030A2C1F794EBE0037694E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9030A2E1F794EBE0037694E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9030A311F794EBE0037694E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9030A331F794EBE0037694E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92176671F7A5E9F00897134 /* DeviceUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUsersViewController.swift; sourceTree = "<group>"; };
-		C921766A1F7A694200897134 /* DeviceUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUserModel.swift; sourceTree = "<group>"; };
+		C921766A1F7A694200897134 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C921766D1F7A72EC00897134 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		C92176721F7A7FAF00897134 /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
-		C92176741F7B3D9700897134 /* OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
-		C96B0D7D1F7BC27E00CBF632 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		C96B0D7E1F7BC2AB00CBF632 /* String+sha1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+sha1.swift"; sourceTree = "<group>"; };
-		C99D38441F7E9E030036DE68 /* Dictionary+union.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+union.swift"; sourceTree = "<group>"; };
-		C99D38461F7F340A0036DE68 /* String+hmac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+hmac.swift"; sourceTree = "<group>"; };
+		C92176741F7B3D9700897134 /* OAuthTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthTwitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				C9030A271F794EBE0037694E /* AppDelegate.swift */,
-				C96B0D7D1F7BC27E00CBF632 /* Bridging-Header.h */,
 				C921766C1F7A694800897134 /* models */,
 				C92176691F7A690800897134 /* controllers */,
 				C921766F1F7A784700897134 /* views */,
@@ -109,7 +99,7 @@
 		C92176691F7A690800897134 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C9030A291F794EBE0037694E /* ViewController.swift */,
+				C9030A291F794EBE0037694E /* HomeViewController.swift */,
 				C92176671F7A5E9F00897134 /* DeviceUsersViewController.swift */,
 			);
 			name = controllers;
@@ -118,13 +108,9 @@
 		C921766C1F7A694800897134 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				C921766A1F7A694200897134 /* DeviceUserModel.swift */,
+				C921766A1F7A694200897134 /* User.swift */,
 				C921766D1F7A72EC00897134 /* Common.swift */,
-				C96B0D7E1F7BC2AB00CBF632 /* String+sha1.swift */,
-				C99D38461F7F340A0036DE68 /* String+hmac.swift */,
-				C99D38441F7E9E030036DE68 /* Dictionary+union.swift */,
-				C92176721F7A7FAF00897134 /* Requests.swift */,
-				C92176741F7B3D9700897134 /* OAuth.swift */,
+				C92176741F7B3D9700897134 /* OAuthTwitter.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -274,15 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C921766B1F7A694200897134 /* DeviceUserModel.swift in Sources */,
-				C99D38471F7F340A0036DE68 /* String+hmac.swift in Sources */,
-				C92176751F7B3D9700897134 /* OAuth.swift in Sources */,
-				C99D38451F7E9E030036DE68 /* Dictionary+union.swift in Sources */,
-				C9030A2A1F794EBE0037694E /* ViewController.swift in Sources */,
-				C96B0D7F1F7BC2AB00CBF632 /* String+sha1.swift in Sources */,
+				C921766B1F7A694200897134 /* User.swift in Sources */,
+				C92176751F7B3D9700897134 /* OAuthTwitter.swift in Sources */,
+				C9030A2A1F794EBE0037694E /* HomeViewController.swift in Sources */,
 				C921766E1F7A72EC00897134 /* Common.swift in Sources */,
 				C9030A281F794EBE0037694E /* AppDelegate.swift in Sources */,
-				C92176731F7A7FAF00897134 /* Requests.swift in Sources */,
 				C92176681F7A5E9F00897134 /* DeviceUsersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,7 +395,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.grapebread.Twift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -429,7 +411,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.grapebread.Twift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import ObjectMapper
 
 class DeviceUsersViewController: UITableViewController {
     let ud: UserDefaults = Common.shared.userDefaults
@@ -29,11 +30,6 @@ class DeviceUsersViewController: UITableViewController {
         
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-        
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -41,8 +37,12 @@ class DeviceUsersViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "deviceUserCell", for: indexPath)
-        (cell.viewWithTag(3) as! UIImageView).sd_setImage(with: NSURL(string: "https://i.gyazo.com/90f50b5c0d1aa8c0b3cd0170e72ec601.png")! as URL)
-        
+        OAuthTwitter().showUser(name: ((users[indexPath.row] as? [String: String])?["name"]!)!) { data in
+            let user: User = Mapper<User>().map(JSONString: data)!
+            (cell.viewWithTag(1) as! UILabel).text = user.name!
+            (cell.viewWithTag(2) as! UILabel).text = "@" + user.screenName!
+            (cell.viewWithTag(3) as! UIImageView).sd_setImage(with: URL(string: user.profileImageUrl!))
+        }
         return cell
     }
     
@@ -51,6 +51,6 @@ class DeviceUsersViewController: UITableViewController {
     }
     
     @IBAction func addNewAccount(_ sender: Any) {
-        OAuth().doOAuthTwitter(vc: self)
+        OAuthTwitter().doOAuthTwitter(vc: self)
     }
 }
