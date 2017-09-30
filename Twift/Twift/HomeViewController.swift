@@ -30,6 +30,10 @@ class HomeViewController: UITableViewController {
     func setUI() {
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(HomeViewController.refreshControlValueChanged(sender:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     func updateTweets() {
@@ -53,6 +57,11 @@ class HomeViewController: UITableViewController {
     }
     
     override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-        print("tapped")
+        print(data[indexPath.row].text!)
+    }
+    
+    func refreshControlValueChanged(sender: UIRefreshControl) {
+        updateTweets()
+        sender.endRefreshing()
     }
 }
