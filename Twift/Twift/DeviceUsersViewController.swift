@@ -14,6 +14,10 @@ class DeviceUsersViewController: UITableViewController {
     let ud: UserDefaults = Common.shared.userDefaults
     var users: [Any] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,8 +41,8 @@ class DeviceUsersViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "deviceUserCell", for: indexPath)
-        OAuthTwitter().showUser(name: ((users[indexPath.row] as? [String: String])?["name"]!)!) { data in
-            let user: User = Mapper<User>().map(JSONString: data)!
+        OAuthTwitter().showUser(name: ((users[indexPath.row] as? [String: String])?["name"]!)!) { jsonString in
+            let user: User = Mapper<User>().map(JSONString: jsonString)!
             (cell.viewWithTag(1) as! UILabel).text = user.name!
             (cell.viewWithTag(2) as! UILabel).text = "@" + user.screenName!
             (cell.viewWithTag(3) as! UIImageView).sd_setImage(with: URL(string: user.profileImageUrl!))

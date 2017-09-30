@@ -65,10 +65,9 @@ class OAuthTwitter {
         return OAuthSwiftOpenURLExternally.sharedInstance
     }
     
-    func fetchHomeTimeLine() {
+    func fetchHomeTimeLine(callback: @escaping (String) -> Void) {
         let _ = self.oauthswift.client.get("https://api.twitter.com/1.1/statuses/home_timeline.json", parameters: ["exclude_replies":"true"], success: { response in
-            let jsonDict = try? response.jsonObject()
-            print(jsonDict as Any)
+            callback(response.dataString()!)
         }, failure: { error in
             print(error)
         })
@@ -76,8 +75,7 @@ class OAuthTwitter {
     
     func verifyCredentials() {
         let _ = self.oauthswift.client.get("https://api.twitter.com/1.1/account/verify_credentials.json", parameters: [:], success: { response in
-            let jsonDict = try? response.jsonObject()
-            print(jsonDict as Any)
+            print(response.dataString()!)
         }, failure: { error in
             print(error)
         })

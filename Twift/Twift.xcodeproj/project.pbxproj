@@ -17,6 +17,7 @@
 		C921766B1F7A694200897134 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921766A1F7A694200897134 /* User.swift */; };
 		C921766E1F7A72EC00897134 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921766D1F7A72EC00897134 /* Common.swift */; };
 		C92176751F7B3D9700897134 /* OAuthTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92176741F7B3D9700897134 /* OAuthTwitter.swift */; };
+		C9C31E981F7FE26E004EE22C /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C31E971F7FE26E004EE22C /* Tweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C921766A1F7A694200897134 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C921766D1F7A72EC00897134 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		C92176741F7B3D9700897134 /* OAuthTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthTwitter.swift; sourceTree = "<group>"; };
+		C9C31E971F7FE26E004EE22C /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				C921766A1F7A694200897134 /* User.swift */,
+				C9C31E971F7FE26E004EE22C /* Tweet.swift */,
 				C921766D1F7A72EC00897134 /* Common.swift */,
 				C92176741F7B3D9700897134 /* OAuthTwitter.swift */,
 			);
@@ -154,12 +157,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Taillook;
 				TargetAttributes = {
 					C9030A231F794EBD0037694E = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = YS65CTH2V7;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -263,6 +267,7 @@
 				C921766B1F7A694200897134 /* User.swift in Sources */,
 				C92176751F7B3D9700897134 /* OAuthTwitter.swift in Sources */,
 				C9030A2A1F794EBE0037694E /* HomeViewController.swift in Sources */,
+				C9C31E981F7FE26E004EE22C /* Tweet.swift in Sources */,
 				C921766E1F7A72EC00897134 /* Common.swift in Sources */,
 				C9030A281F794EBE0037694E /* AppDelegate.swift in Sources */,
 				C92176681F7A5E9F00897134 /* DeviceUsersViewController.swift in Sources */,
@@ -301,7 +306,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -309,7 +316,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -351,7 +362,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -359,7 +372,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
