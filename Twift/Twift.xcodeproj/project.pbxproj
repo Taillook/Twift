@@ -72,10 +72,10 @@
 		C9030A1B1F794EBD0037694E = {
 			isa = PBXGroup;
 			children = (
-				C9030A261F794EBE0037694E /* Twift */,
-				C9030A251F794EBE0037694E /* Products */,
-				0FBFA044F17BD0BFFAD75BE1 /* Pods */,
 				B824B3D48C181F338C8BEBDF /* Frameworks */,
+				0FBFA044F17BD0BFFAD75BE1 /* Pods */,
+				C9030A251F794EBE0037694E /* Products */,
+				C9030A261F794EBE0037694E /* Twift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,10 +90,10 @@
 		C9030A261F794EBE0037694E /* Twift */ = {
 			isa = PBXGroup;
 			children = (
-				C9030A271F794EBE0037694E /* AppDelegate.swift */,
-				C921766C1F7A694800897134 /* Models */,
 				C92176691F7A690800897134 /* Controllers */,
+				C921766C1F7A694800897134 /* Models */,
 				C921766F1F7A784700897134 /* Views */,
+				C9030A271F794EBE0037694E /* AppDelegate.swift */,
 				C9030A2E1F794EBE0037694E /* Assets.xcassets */,
 				C9030A331F794EBE0037694E /* Info.plist */,
 			);
@@ -103,10 +103,11 @@
 		C92176691F7A690800897134 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C9030A291F794EBE0037694E /* HomeViewController.swift */,
 				C92176671F7A5E9F00897134 /* DeviceUsersViewController.swift */,
+				C9030A291F794EBE0037694E /* HomeViewController.swift */,
 			);
 			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C921766C1F7A694800897134 /* Models */ = {
@@ -118,24 +119,27 @@
 				C9C57E701F807476007C5E06 /* Requests.swift */,
 			);
 			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C921766F1F7A784700897134 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C9030A2B1F794EBE0037694E /* Main.storyboard */,
 				C9030A301F794EBE0037694E /* LaunchScreen.storyboard */,
+				C9030A2B1F794EBE0037694E /* Main.storyboard */,
 			);
 			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C9C57E721F8075E6007C5E06 /* TwitterObjects */ = {
 			isa = PBXGroup;
 			children = (
-				C921766A1F7A694200897134 /* User.swift */,
 				C9C31E971F7FE26E004EE22C /* Tweet.swift */,
+				C921766A1F7A694200897134 /* User.swift */,
 			);
 			name = TwitterObjects;
+			path = TwitterObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +299,7 @@
 				C9030A2C1F794EBE0037694E /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		C9030A301F794EBE0037694E /* LaunchScreen.storyboard */ = {
@@ -303,6 +308,7 @@
 				C9030A311F794EBE0037694E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
