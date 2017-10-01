@@ -8,7 +8,7 @@
 
 extension OAuthTwitter {
     func fetchHomeTimeLine(callback: @escaping (String) -> Void) {
-        let _ = self.oauthswift.client.get("https://api.twitter.com/1.1/statuses/home_timeline.json", parameters: ["exclude_replies": "true", "count": "20"], success: { response in
+        let _ = self.oauthswift.client.get("https://api.twitter.com/1.1/statuses/home_timeline.json", parameters: ["count": "20"], success: { response in
             callback(response.dataString()!)
         }, failure: { error in
             print(error)
