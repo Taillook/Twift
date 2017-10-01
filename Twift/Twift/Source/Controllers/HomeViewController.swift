@@ -12,6 +12,7 @@ import ObjectMapper
 
 class HomeViewController: UITableViewController {
     var data: [Tweet] = []
+    var tappedId:String = ""
     
     override func viewWillAppear(_ animated: Bool) {
         updateTweets()
@@ -59,6 +60,7 @@ class HomeViewController: UITableViewController {
     
     override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
         print(data[indexPath.row].text!)
+        tappedId = data[indexPath.row].id!
         self.performSegue(withIdentifier: "toTweetDetailViewController", sender: nil)
     }
     
@@ -70,6 +72,7 @@ class HomeViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTweetDetailViewController" {
             let vc = segue.destination as! TweetDetailViewController
+            vc.id = self.tappedId
         }
     }
 }

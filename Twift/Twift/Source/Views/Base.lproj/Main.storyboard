@@ -225,6 +225,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="LbH-Vb-JYr"/>
                                                         <constraint firstAttribute="width" constant="48" id="jdI-yq-iaa"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="kHz-cn-1d3"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="mma-YD-bib"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -278,6 +280,7 @@
                                     </constraints>
                                 </stackView>
                             </subviews>
+                            <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="ISM-Og-5WB" firstAttribute="top" secondItem="aEp-lB-bOs" secondAttribute="top" constant="10" id="AIU-cU-SFY"/>
                                 <constraint firstAttribute="trailing" secondItem="ISM-Og-5WB" secondAttribute="trailing" constant="10" id="Mmr-x9-XFG"/>
@@ -301,6 +304,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tweet" id="dTF-C1-lDv"/>
+                    <connections>
+                        <outlet property="tweetUserImage" destination="XAE-il-idN" id="YMT-sW-VW1"/>
+                        <outlet property="tweetUserName" destination="tex-h7-ag7" id="TN8-ta-gPt"/>
+                        <outlet property="tweetUserScreen" destination="ZiD-cw-Uuh" id="KKi-yB-hC5"/>
+                        <outlet property="tweettext" destination="je8-DV-7Ef" id="uNg-eQ-Ghp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIb-La-6P8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

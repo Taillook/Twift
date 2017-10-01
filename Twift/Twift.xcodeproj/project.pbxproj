@@ -20,6 +20,7 @@
 		C9C31E981F7FE26E004EE22C /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C31E971F7FE26E004EE22C /* Tweet.swift */; };
 		C9C57E711F807476007C5E06 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C57E701F807476007C5E06 /* Requests.swift */; };
 		C9C57E761F807F18007C5E06 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C57E751F807F18007C5E06 /* TweetDetailViewController.swift */; };
+		C9C57E781F809C5D007C5E06 /* TweetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C57E771F809C5D007C5E06 /* TweetDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C9C31E971F7FE26E004EE22C /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		C9C57E701F807476007C5E06 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		C9C57E751F807F18007C5E06 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
+		C9C57E771F809C5D007C5E06 /* TweetDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				C9C31E971F7FE26E004EE22C /* Tweet.swift */,
+				C9C57E771F809C5D007C5E06 /* TweetDetail.swift */,
 				C921766A1F7A694200897134 /* User.swift */,
 			);
 			path = TwitterObjects;
@@ -300,6 +303,7 @@
 				C9030A2A1F794EBE0037694E /* HomeViewController.swift in Sources */,
 				C9C31E981F7FE26E004EE22C /* Tweet.swift in Sources */,
 				C921766E1F7A72EC00897134 /* Common.swift in Sources */,
+				C9C57E781F809C5D007C5E06 /* TweetDetail.swift in Sources */,
 				C9C57E711F807476007C5E06 /* Requests.swift in Sources */,
 				C9030A281F794EBE0037694E /* AppDelegate.swift in Sources */,
 				C92176681F7A5E9F00897134 /* DeviceUsersViewController.swift in Sources */,

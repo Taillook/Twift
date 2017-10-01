@@ -9,8 +9,9 @@
 import ObjectMapper
 
 class Tweet: Mappable {
-    var text: String?
-    var user: User?
+    var text:   String?
+    var user:   User?
+    var id:     String?
     
     required init?(map: Map) {
     }
@@ -18,5 +19,6 @@ class Tweet: Mappable {
     func mapping(map: Map) {
         text    <- map["text"]
         user    <- map["user"]
+        id      <- map["id_str"]
     }
 }

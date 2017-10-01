@@ -30,4 +30,12 @@ extension OAuthTwitter {
             print(error)
         })
     }
+    
+    func tweetDetail(id:String, callback: @escaping (String) -> Void) {
+        let _ = self.oauthswift.client.get("https://api.twitter.com/1.1/statuses/show.json", parameters: ["id": id], success: { response in
+            callback(response.dataString()!)
+        }, failure: { error in
+            print(error)
+        })
+    }
 }

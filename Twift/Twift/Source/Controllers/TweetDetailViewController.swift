@@ -11,7 +11,12 @@ import SDWebImage
 import ObjectMapper
 
 class TweetDetailViewController: UITableViewController {
-    var data: [Tweet] = []
+    var id:String? = ""
+    
+    @IBOutlet weak var tweetUserImage: UIImageView!
+    @IBOutlet weak var tweetUserName: UILabel!
+    @IBOutlet weak var tweetUserScreen: UILabel!
+    @IBOutlet weak var tweettext: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         updateTweets()
@@ -37,15 +42,17 @@ class TweetDetailViewController: UITableViewController {
     }
     
     func updateTweets() {
-        OAuthTwitter().fetchHomeTimeLine() { jsonString in
-            self.data = Mapper<Tweet>().mapArray(JSONString: jsonString)!
-            self.tableView.reloadData()
-            print(self.data.count)
+        OAuthTwitter().tweetDetail(id: id!) { jsonString in
+            let tweetDetail: TweetDetail = Mapper<TweetDetail>().map(JSONString: jsonString)!
+            self.tweetUserName.text = tweetDetail.user?.name
+            self.tweetUserScreen.text = "@" + (tweetDetail.user?.screenName!)!
+            self.tweettext.text = tweetDetail.text
+            self.tweetUserImage.sd_setImage(with: URL(string: (tweetDetail.user?.profileImageUrl!)!))
         }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,6 +62,5 @@ class TweetDetailViewController: UITableViewController {
     }
     
     override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-        print(data[indexPath.row].text!)
     }
 }
