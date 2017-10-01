@@ -38,4 +38,20 @@ extension OAuthTwitter {
             print(error)
         })
     }
+    
+    func createFav(id:String) {
+        let _ = self.oauthswift.client.post("https://api.twitter.com/1.1/favorites/create.json", parameters: ["id": id], success: { response in
+            print(response.dataString()!)
+        }, failure: { error in
+            print(error)
+        })
+    }
+    
+    func createReTweet(id:String) {
+        let _ = self.oauthswift.client.post("https://api.twitter.com/1.1/statuses/retweet/" + id + ".json", parameters: ["id": id], success: { response in
+            print(response.dataString()!)
+        }, failure: { error in
+            print(error)
+        })
+    }
 }

@@ -76,6 +76,12 @@ class TweetDetailViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
+    @IBAction func tappedFavButton(_ sender: Any) {
+        OAuthTwitter().createFav(id: self.id!)
     }
+    
+    @IBAction func tappedReTweetButton(_ sender: Any) {
+        OAuthTwitter().createReTweet(id: self.id!)
+    }
+    
 }

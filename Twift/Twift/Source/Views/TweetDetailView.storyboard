@@ -71,13 +71,21 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Eh-sh-JYj">
-                                            <rect key="frame" x="0.0" y="70" width="355" height="40"/>
+                                            <rect key="frame" x="0.0" y="60" width="355" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="E81-fC-sLM"/>
                                             </constraints>
                                             <items>
-                                                <barButtonItem title="いいね" id="wy3-yn-zX8"/>
-                                                <barButtonItem title="リツイート" id="Mgu-YS-IY9"/>
+                                                <barButtonItem title="いいね" id="wy3-yn-zX8">
+                                                    <connections>
+                                                        <action selector="tappedFavButton:" destination="O6g-aZ-ryt" id="V1Y-lg-2q6"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem title="リツイート" id="Mgu-YS-IY9">
+                                                    <connections>
+                                                        <action selector="tappedReTweetButton:" destination="O6g-aZ-ryt" id="GlA-br-vYW"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </items>
                                         </toolbar>
                                     </subviews>
