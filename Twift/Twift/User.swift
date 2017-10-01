@@ -6,7 +6,6 @@
 //  Copyright © 2017年 Taillook. All rights reserved.
 //
 
-import Foundation
 import ObjectMapper
 
 class User: Mappable {

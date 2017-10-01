@@ -19,7 +19,7 @@ class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        setUpUI()
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,7 +27,7 @@ class HomeViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setUI() {
+    func setUpUI() {
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -40,6 +40,7 @@ class HomeViewController: UITableViewController {
         OAuthTwitter().fetchHomeTimeLine() { jsonString in
             self.data = Mapper<Tweet>().mapArray(JSONString: jsonString)!
             self.tableView.reloadData()
+            print(self.data.count)
         }
     }
     

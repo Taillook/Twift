@@ -6,7 +6,6 @@
 //  Copyright © 2017年 Taillook. All rights reserved.
 //
 
-import Foundation
 import OAuthSwift
 
 class OAuthTwitter {
@@ -61,29 +60,5 @@ class OAuthTwitter {
             return handler
         }
         return OAuthSwiftOpenURLExternally.sharedInstance
-    }
-    
-    func fetchHomeTimeLine(callback: @escaping (String) -> Void) {
-        let _ = self.oauthswift.client.get("https://api.twitter.com/1.1/statuses/home_timeline.json", parameters: ["exclude_replies":"true"], success: { response in
-            callback(response.dataString()!)
-        }, failure: { error in
-            print(error)
-        })
-    }
-    
-    func verifyCredentials() {
-        let _ = self.oauthswift.client.get("https://api.twitter.com/1.1/account/verify_credentials.json", parameters: [:], success: { response in
-            print(response.dataString()!)
-        }, failure: { error in
-            print(error)
-        })
-    }
-    
-    func showUser(name:String, callback: @escaping (String) -> Void) {
-        let _ = self.oauthswift.client.get("https://api.twitter.com/1.1/users/show.json", parameters: ["screen_name": name], success: { response in
-            callback(response.dataString()!)
-        }, failure: { error in
-            print(error)
-        })
     }
 }
