@@ -15,7 +15,7 @@ class HomeViewController: UITableViewController {
     var tappedId:String = ""
     
     override func viewWillAppear(_ animated: Bool) {
-        updateTweets()
+        updateDatas()
     }
     
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class HomeViewController: UITableViewController {
         tableView.addSubview(refreshControl)
     }
     
-    func updateTweets() {
+    func updateDatas() {
         OAuthTwitter().fetchHomeTimeLine() { jsonString in
             self.data = Mapper<Tweet>().mapArray(JSONString: jsonString)!
             self.tableView.reloadData()
@@ -65,7 +65,7 @@ class HomeViewController: UITableViewController {
     }
     
     func refreshControlValueChanged(sender: UIRefreshControl) {
-        updateTweets()
+        updateDatas()
         sender.endRefreshing()
     }
     
