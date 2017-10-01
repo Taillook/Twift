@@ -15,9 +15,9 @@ extension OAuthTwitter {
         })
     }
     
-    func verifyCredentials() {
+    func verifyCredentials(callback: @escaping (String) -> Void) {
         let _ = self.oauthswift.client.get("https://api.twitter.com/1.1/account/verify_credentials.json", parameters: [:], success: { response in
-            print(response.dataString()!)
+            callback(response.dataString()!)
         }, failure: { error in
             print(error)
         })

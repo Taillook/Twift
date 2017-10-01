@@ -19,6 +19,7 @@
 		C92176751F7B3D9700897134 /* OAuthTwitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92176741F7B3D9700897134 /* OAuthTwitter.swift */; };
 		C9C31E981F7FE26E004EE22C /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C31E971F7FE26E004EE22C /* Tweet.swift */; };
 		C9C57E711F807476007C5E06 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C57E701F807476007C5E06 /* Requests.swift */; };
+		C9C57E761F807F18007C5E06 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C57E751F807F18007C5E06 /* TweetDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C92176741F7B3D9700897134 /* OAuthTwitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthTwitter.swift; sourceTree = "<group>"; };
 		C9C31E971F7FE26E004EE22C /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		C9C57E701F807476007C5E06 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		C9C57E751F807F18007C5E06 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,12 +92,9 @@
 		C9030A261F794EBE0037694E /* Twift */ = {
 			isa = PBXGroup;
 			children = (
-				C92176691F7A690800897134 /* Controllers */,
-				C921766C1F7A694800897134 /* Models */,
-				C921766F1F7A784700897134 /* Views */,
+				C9C57E741F80783D007C5E06 /* Resources */,
+				C9C57E731F80781C007C5E06 /* Source */,
 				C9030A271F794EBE0037694E /* AppDelegate.swift */,
-				C9030A2E1F794EBE0037694E /* Assets.xcassets */,
-				C9030A331F794EBE0037694E /* Info.plist */,
 			);
 			path = Twift;
 			sourceTree = "<group>";
@@ -104,9 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				C92176671F7A5E9F00897134 /* DeviceUsersViewController.swift */,
+				C9C57E751F807F18007C5E06 /* TweetDetailViewController.swift */,
 				C9030A291F794EBE0037694E /* HomeViewController.swift */,
 			);
-			name = Controllers;
 			path = Controllers;
 			sourceTree = "<group>";
 		};
@@ -118,7 +117,6 @@
 				C92176741F7B3D9700897134 /* OAuthTwitter.swift */,
 				C9C57E701F807476007C5E06 /* Requests.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -128,7 +126,6 @@
 				C9030A301F794EBE0037694E /* LaunchScreen.storyboard */,
 				C9030A2B1F794EBE0037694E /* Main.storyboard */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -138,8 +135,26 @@
 				C9C31E971F7FE26E004EE22C /* Tweet.swift */,
 				C921766A1F7A694200897134 /* User.swift */,
 			);
-			name = TwitterObjects;
 			path = TwitterObjects;
+			sourceTree = "<group>";
+		};
+		C9C57E731F80781C007C5E06 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C92176691F7A690800897134 /* Controllers */,
+				C921766C1F7A694800897134 /* Models */,
+				C921766F1F7A784700897134 /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		C9C57E741F80783D007C5E06 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9030A2E1F794EBE0037694E /* Assets.xcassets */,
+				C9030A331F794EBE0037694E /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +296,7 @@
 			files = (
 				C921766B1F7A694200897134 /* User.swift in Sources */,
 				C92176751F7B3D9700897134 /* OAuthTwitter.swift in Sources */,
+				C9C57E761F807F18007C5E06 /* TweetDetailViewController.swift in Sources */,
 				C9030A2A1F794EBE0037694E /* HomeViewController.swift in Sources */,
 				C9C31E981F7FE26E004EE22C /* Tweet.swift in Sources */,
 				C921766E1F7A72EC00897134 /* Common.swift in Sources */,
@@ -425,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YS65CTH2V7;
-				INFOPLIST_FILE = Twift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Twift/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.grapebread.Twift;
@@ -441,7 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YS65CTH2V7;
-				INFOPLIST_FILE = Twift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Twift/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.grapebread.Twift;

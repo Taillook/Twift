@@ -59,10 +59,17 @@ class HomeViewController: UITableViewController {
     
     override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
         print(data[indexPath.row].text!)
+        self.performSegue(withIdentifier: "toTweetDetailViewController", sender: nil)
     }
     
     func refreshControlValueChanged(sender: UIRefreshControl) {
         updateTweets()
         sender.endRefreshing()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTweetDetailViewController" {
+            let vc = segue.destination as! TweetDetailViewController
+        }
     }
 }

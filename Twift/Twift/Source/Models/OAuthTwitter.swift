@@ -41,6 +41,8 @@ class OAuthTwitter {
                 self.ud.synchronize()
                 
                 self.shared.currentUser = ["token": credential.oauthToken, "tokenSecret": credential.oauthTokenSecret]
+                
+                vc.navigationController?.popViewController(animated: true)
         },
             failure: { error in
                 print(error.description)
