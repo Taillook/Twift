@@ -15,12 +15,19 @@
                 <viewControllerPlaceholder storyboardName="DeviceUsersView" id="9Ut-1b-oXL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kup-7g-QfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="118"/>
+            <point key="canvasLocation" x="743" y="139"/>
+        </scene>
+        <!--SendTweetView-->
+        <scene sceneID="Hzb-F6-LBl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SendTweetView" id="JKK-mj-VmY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZd-Fp-cBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="93"/>
         </scene>
         <!--Home-->
         <scene sceneID="gvt-mg-6Ld">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EEE-am-GQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="gBX-06-5F5" customClass="HomeViewController" customModule="Twift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="pUw-qg-vyI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -58,13 +65,13 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="297" height="129.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="SN1-yu-EC6">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="292" height="129.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="129.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCI-RK-HoF">
-                                                                    <rect key="frame" x="297" y="0.0" width="0.0" height="129.5"/>
+                                                                    <rect key="frame" x="5" y="0.0" width="292" height="129.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -112,11 +119,17 @@
                                 <segue destination="9Ut-1b-oXL" kind="show" id="OHA-Zj-aBY"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="X57-es-J3P">
+                            <connections>
+                                <segue destination="JKK-mj-VmY" kind="presentation" modalPresentationStyle="overCurrentContext" id="jaN-GQ-KAh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="JcH-wk-DKx" kind="show" identifier="toTweetDetailViewController" id="Tdh-Vp-xLT"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EEE-am-GQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="142" y="139"/>
         </scene>
@@ -126,7 +139,7 @@
                 <viewControllerPlaceholder storyboardName="TweetDetailView" id="JcH-wk-DKx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCL-6T-M7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="161"/>
+            <point key="canvasLocation" x="746" y="181"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nJU-TO-IKM">

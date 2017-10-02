@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y1a-hu-uJk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Send Tweet View Controller-->
+        <scene sceneID="OSN-Pz-J9z">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="y1a-hu-uJk" customClass="SendTweetViewController" customModule="Twift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gaf-2z-Udk"/>
+                        <viewControllerLayoutGuide type="bottom" id="ELP-eU-Fz5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IfD-Fl-4rJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2Me-nD-vWh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gyf-a8-uT8">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="lkM-VS-iQi">
+                                                <rect key="frame" x="10" y="10" width="355" height="185"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p2j-oR-yZR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="150"/>
+                                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="twitter" keyboardAppearance="alert"/>
+                                                    </textView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kr-to-Ehg">
+                                                        <rect key="frame" x="308" y="150" width="47" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Tweet"/>
+                                                        <connections>
+                                                            <action selector="tappedTweet:" destination="y1a-hu-uJk" eventType="touchUpInside" id="6dU-5w-SQH"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="2Kr-to-Ehg" secondAttribute="bottom" id="JE6-Ei-mYN"/>
+                                                    <constraint firstItem="p2j-oR-yZR" firstAttribute="leading" secondItem="lkM-VS-iQi" secondAttribute="leading" id="OPu-vO-grL"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="lkM-VS-iQi" secondAttribute="trailing" constant="10" id="6tT-no-cx5"/>
+                                            <constraint firstItem="lkM-VS-iQi" firstAttribute="top" secondItem="Gyf-a8-uT8" secondAttribute="top" constant="10" id="Ipz-Ho-trB"/>
+                                            <constraint firstItem="lkM-VS-iQi" firstAttribute="leading" secondItem="Gyf-a8-uT8" secondAttribute="leading" constant="10" id="VLG-GF-xCL"/>
+                                            <constraint firstAttribute="bottom" secondItem="lkM-VS-iQi" secondAttribute="bottom" constant="5" id="vb6-ob-wxf"/>
+                                        </constraints>
+                                    </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gp-wm-Bab">
+                                        <rect key="frame" x="0.0" y="200" width="375" height="447"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16f-Tj-EIw">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                                                <connections>
+                                                    <action selector="tappedClose:" destination="y1a-hu-uJk" eventType="touchDown" id="JG3-bi-H1B"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="16f-Tj-EIw" firstAttribute="top" secondItem="5Gp-wm-Bab" secondAttribute="top" id="GDN-LF-rIJ"/>
+                                            <constraint firstItem="16f-Tj-EIw" firstAttribute="leading" secondItem="5Gp-wm-Bab" secondAttribute="leading" id="VZH-nq-2vz"/>
+                                            <constraint firstAttribute="trailing" secondItem="16f-Tj-EIw" secondAttribute="trailing" id="ctE-aJ-MOc"/>
+                                            <constraint firstAttribute="bottom" secondItem="16f-Tj-EIw" secondAttribute="bottom" id="pqB-Bg-ED6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Gp-wm-Bab" firstAttribute="top" secondItem="2Me-nD-vWh" secondAttribute="top" constant="200" id="0YH-z3-EwU"/>
+                                    <constraint firstItem="Gyf-a8-uT8" firstAttribute="trailing" secondItem="5Gp-wm-Bab" secondAttribute="trailing" id="H03-eR-SYb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gyf-a8-uT8" secondAttribute="trailing" id="xxr-ue-YEc"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="2Me-nD-vWh" firstAttribute="top" secondItem="gaf-2z-Udk" secondAttribute="bottom" id="BtJ-4N-Q2a"/>
+                            <constraint firstItem="ELP-eU-Fz5" firstAttribute="top" secondItem="2Me-nD-vWh" secondAttribute="bottom" id="oc6-6s-NEb"/>
+                            <constraint firstItem="2Me-nD-vWh" firstAttribute="leading" secondItem="IfD-Fl-4rJ" secondAttribute="leading" id="xtL-Qq-cll"/>
+                            <constraint firstAttribute="trailing" secondItem="2Me-nD-vWh" secondAttribute="trailing" id="zPw-g8-FYF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fQ3-nk-IIj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wHn-Nu-APD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253.5999999999999" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
