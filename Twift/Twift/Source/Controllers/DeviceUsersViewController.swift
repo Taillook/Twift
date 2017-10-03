@@ -11,9 +11,9 @@ import SDWebImage
 import ObjectMapper
 
 class DeviceUsersViewController: UITableViewController {
-    let ud: UserDefaults = Common.shared.userDefaults
+    let ud = Common.shared.userDefaults
     let shared = Common.shared
-    var users: [[String: String]] = []
+    var users  = [[String: String]]()
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -22,10 +22,10 @@ class DeviceUsersViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if ((self.ud.object(forKey: "users")) != nil) {
-            users = self.ud.object(forKey: "users") as! [[String: String]]
+        if ud.object(forKey: "users") != nil {
+            users = ud.object(forKey: "users") as! [[String: String]]
         }else {
-            self.ud.set(users, forKey: "users")
+            ud.set(users, forKey: "users")
         }
         
     }
@@ -39,7 +39,6 @@ class DeviceUsersViewController: UITableViewController {
         return users.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "deviceUserCell", for: indexPath)
         OAuthTwitter().showUser(name: (users[indexPath.row]["name"]!)) { jsonString in
@@ -52,11 +51,11 @@ class DeviceUsersViewController: UITableViewController {
     }
     
     override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-        self.shared.currentUser = ["token": users[indexPath.row]["token"]!, "tokenSecret": users[indexPath.row]["tokenSecret"]!]
+        shared.currentUser = ["token": users[indexPath.row]["token"]!, "tokenSecret": users[indexPath.row]["tokenSecret"]!]
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addNewAccount(_ sender: Any) {
+    @IBAction func addNewAccount(_ sender: UIButton) {
         OAuthTwitter().doOAuthTwitter(vc: self)
     }
 }

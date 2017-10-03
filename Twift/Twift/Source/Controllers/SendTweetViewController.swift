@@ -9,11 +9,11 @@
 import UIKit
 
 class SendTweetViewController: UIViewController {
-    @IBAction func tappedTweet(_ sender: Any) {
+    @IBAction func tappedTweet(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func tappedClose(_ sender: Any) {
+    @IBAction func tappedClose(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
         print("aaaa")
     }

@@ -11,12 +11,12 @@ import SDWebImage
 import ObjectMapper
 
 class TweetDetailViewController: UITableViewController {
-    var id:String? = ""
+    var id = ""
     
-    @IBOutlet weak var tweetUserImage: UIImageView!
-    @IBOutlet weak var tweetUserName: UILabel!
-    @IBOutlet weak var tweetUserScreen: UILabel!
-    @IBOutlet weak var tweettext: UILabel!
+    @IBOutlet private weak var tweetUserImage: UIImageView!
+    @IBOutlet private weak var tweetUserName: UILabel!
+    @IBOutlet private weak var tweetUserScreen: UILabel!
+    @IBOutlet private weak var tweettext: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         updateTweets()
@@ -57,8 +57,9 @@ class TweetDetailViewController: UITableViewController {
     }
     
     func updateTweets() {
-        OAuthTwitter().tweetDetail(id: id!) { jsonString in
+        OAuthTwitter().tweetDetail(id: id) { (jsonString: String) in
             let tweetDetail: TweetDetail = Mapper<TweetDetail>().map(JSONString: jsonString)!
+            
             self.tweetUserName.text = tweetDetail.user?.name
             self.tweetUserScreen.text = "@" + (tweetDetail.user?.screenName!)!
             self.tweettext.text = tweetDetail.text
@@ -76,12 +77,12 @@ class TweetDetailViewController: UITableViewController {
         return cell
     }
     
-    @IBAction func tappedFavButton(_ sender: Any) {
-        OAuthTwitter().createFav(id: self.id!)
+    @IBAction func tappedFavButton(_ sender: UIButton) {
+        OAuthTwitter().createFav(id: id)
     }
     
-    @IBAction func tappedReTweetButton(_ sender: Any) {
-        OAuthTwitter().createReTweet(id: self.id!)
+    @IBAction func tappedReTweetButton(_ sender: UIButton) {
+        OAuthTwitter().createReTweet(id: id)
     }
     
 }

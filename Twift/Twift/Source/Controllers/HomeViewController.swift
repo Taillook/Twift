@@ -11,8 +11,8 @@ import OAuthSwift
 import ObjectMapper
 
 class HomeViewController: UITableViewController {
-    var data: [Tweet] = []
-    var tappedId:String = ""
+    var data = [Tweet]()
+    var tappedId = ""
     
     override func viewWillAppear(_ animated: Bool) {
         updateDatas()
@@ -38,7 +38,7 @@ class HomeViewController: UITableViewController {
     }
     
     func updateDatas() {
-        OAuthTwitter().fetchHomeTimeLine() { jsonString in
+        OAuthTwitter().fetchHomeTimeLine() { (jsonString: String) in
             self.data = Mapper<Tweet>().mapArray(JSONString: jsonString)!
             self.tableView.reloadData()
             print(self.data.count)
@@ -61,7 +61,7 @@ class HomeViewController: UITableViewController {
     override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
         print(data[indexPath.row].text!)
         tappedId = data[indexPath.row].id!
-        self.performSegue(withIdentifier: "toTweetDetailViewController", sender: nil)
+        performSegue(withIdentifier: "toTweetDetailViewController", sender: nil)
     }
     
     func refreshControlValueChanged(sender: UIRefreshControl) {
@@ -72,7 +72,7 @@ class HomeViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTweetDetailViewController" {
             let vc = segue.destination as! TweetDetailViewController
-            vc.id = self.tappedId
+            vc.id = tappedId
         }
     }
 }
