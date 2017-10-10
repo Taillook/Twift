@@ -27,17 +27,14 @@ class TweetDetailViewController: UITableViewController {
         setUpUI()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
         if let headerView = tableView.tableHeaderView {
             let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
-            var headerFrame = headerView.frame
             
-            if height != headerFrame.size.height {
-                headerFrame.size.height = height
-                headerView.frame = headerFrame
-                tableView.tableHeaderView = headerView
+            if height != headerView.frame.size.height {
+                tableView.tableHeaderView?.frame.size.height = height
             }
         }
     }
